@@ -1,7 +1,7 @@
 <?php
 	include("email_helper.php");
 	
-	$emails = array("nrs666666@gmail.com");
+	$emails = array("");
 	$subject = "test email";
 	$body = "new movie!~";
 	

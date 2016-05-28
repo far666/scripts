@@ -28,7 +28,6 @@ class EmailHelper {
 		$mail->IsHTML(true); //設定郵件內容為HTML
 		
 		foreach ($emails as $email) {
-			//$mail->AddAddress("nrs666666@gmail.com", "far"); //設定收件者郵件及名稱        
 			$mail->AddAddress($email); //設定收件者郵件及名稱        
 		}
 		
