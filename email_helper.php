@@ -1,5 +1,5 @@
 <?php
-include("config.php");
+include_once("config.php");
 include("../libs/PHPMailer/PHPMailerAutoload.php"); //匯入PHPMailer類別       
 
 class EmailHelper {
@@ -21,7 +21,7 @@ class EmailHelper {
 		$mail->Password = EMAIL_PASSWORD; //設定驗證密碼        
 		
 		$mail->From = EMAIL_FROM; //設定寄件者信箱        
-		$mail->FromName = EMAIL_FORM_NAME; //設定寄件者姓名        
+		$mail->FromName = EMAIL_FROM_NAME; //設定寄件者姓名
 		
 		$mail->Subject = "=?UTF-8?B?".base64_encode($subject)."?="; //設定郵件標題        
 		$mail->Body = $body; //設定郵件內容        
