@@ -7,8 +7,13 @@ import requests
 from bs4 import BeautifulSoup
 import lxml
 import random
+import json
 
-db = MySQLdb.connect(host="localhost", user="far", passwd="far123", db="far",cursorclass=MySQLdb.cursors.DictCursor)
+
+with open('config.json') as data_file:
+    config = json.load(data_file)
+
+db = MySQLdb.connect(host=config['db_host'], user=config['db_user'], passwd=config['db_password'], db=config['selected_db'],cursorclass=MySQLdb.cursors.DictCursor)
 db.set_character_set('utf8')
 cursor = db.cursor()
 cursor.execute('SET NAMES utf8;')
