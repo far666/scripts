@@ -1,6 +1,6 @@
 <?php
-	include_once("config.php");
-	include("email_helper.php");
+	include_once("./config.php");
+	include("./email_helper.php");
 
 	$link = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_SELECT_DB);
 	if ($link->connect_errno) {
@@ -12,10 +12,11 @@
 
 	$sql_keyword = "SELECT * FROM wait_list WHERE status = 0";
 	if (!$result = $link->query($sql_keyword)) {
-		echo "query fail";
+		echo "query fail\n";
 		exit;
 	}
 	
+	echo date("Y-m-d H:i:s")."\n";
 	while ($row = $result->fetch_assoc()) {
 		$sql_movie = "SELECT * FROM eyny_movie WHERE name LIKE '%".$row['keyword']."%' ORDER BY id DESC LIMIT 10";
 		if (!$movies = $link->query($sql_movie)) {
@@ -40,7 +41,7 @@
 			print_r($insert_result);
 		}
 	}
-	echo "done";
+	echo "done\n";
 	exit;
 
 	var_dump($result);
