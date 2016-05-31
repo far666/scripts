@@ -1,0 +1,2 @@
+#please clone PHPMailer
+git clone https://github.com/PHPMailer/PHPMailer.git
