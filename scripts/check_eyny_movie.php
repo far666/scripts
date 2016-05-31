@@ -1,6 +1,6 @@
 <?php
 	include_once("../config/config.php");
-	include_once("../scripts/email_helper.php");
+	include_once("../helper/email_helper.php");
 
 	$link = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_SELECT_DB);
 	if ($link->connect_errno) {

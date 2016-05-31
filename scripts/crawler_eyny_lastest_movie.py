@@ -37,11 +37,11 @@ for tbody in soup.find_all('tbody'):
 		if by.em.span is not None:
 			time = by.em.span
 
-		check_sql = "SELECT * FROM `eyny_movie` WHERE `name` = '{0}'".format(name)
-		result = cursor.execute(check_sql)
-		if result == 0 :
-			insert_sql = "INSERT INTO `eyny_movie` (`name`,`admin`,`create_at`,`url`) VALUES (%s,%s,%s,%s);"
-			val = (name, admin, time, url)
-			result = cursor.execute(insert_sql,val)
-			print result
+	check_sql = "SELECT * FROM `eyny_movie` WHERE `name` = '{0}'".format(name)
+	result = cursor.execute(check_sql)
+	if result == 0 :
+		insert_sql = "INSERT INTO `eyny_movie` (`name`,`admin`,`create_at`,`url`) VALUES (%s,%s,%s,%s);"
+		val = (name, admin, time, url)
+		result = cursor.execute(insert_sql,val)
+		print result
 db.commit()
