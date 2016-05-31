@@ -1,6 +1,6 @@
 <?php
-	include_once("./config.php");
-	include("./email_helper.php");
+	include_once("../config/config.php");
+	include_once("../scripts/email_helper.php");
 
 	$link = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_SELECT_DB);
 	if ($link->connect_errno) {
@@ -48,7 +48,7 @@
 	echo "done";
 	exit;
 
-	function send_email ($email = "", $name ="", $url="") {
+	function send_email($email = "", $name ="", $url="") {
 		if ($email == "" || $name == "" || $url == "") {
 			return false;
 		}
@@ -61,7 +61,7 @@
 		return $result;
 	}
 
-	function insert_record ($eyny_movie_id = 0, $wait_list_id = 0) {
+	function insert_record($eyny_movie_id = 0, $wait_list_id = 0) {
 		if ($eyny_movie_id == 0 || $wait_list_id == 0) {
 			return false;
 		}

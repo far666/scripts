@@ -10,3 +10,5 @@ define("DB_HOST", "");
 define("DB_USER_NAME", "");
 define("DB_PASSWORD", "");
 define("DB_SELECT_DB", "");
+
+define("WEB_HOST", "");
