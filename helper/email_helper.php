@@ -9,7 +9,7 @@ class EmailHelper {
 		}
 
 		$mail= new PHPMailer(); //建立新物件        
-		$mail->SMTPDebug = 2;
+		$mail->SMTPDebug = 0;
 		$mail->IsSMTP(); //設定使用SMTP方式寄信
 		$mail->SMTPAuth = true; //設定SMTP需要驗證
 		$mail->SMTPSecure = "ssl"; // Gmail的SMTP主機需要使用SSL連線
