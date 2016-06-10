@@ -7,7 +7,7 @@ define("EMAIL_FROM_NAME", "FROM_NAME");
 
 
 define("DB_HOST", "");
-define("DB_USER_NAME", "");
+define("DB_USER", "");
 define("DB_PASSWORD", "");
 define("DB_SELECT_DB", "");
 
