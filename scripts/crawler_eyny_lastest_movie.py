@@ -24,7 +24,7 @@ cursor.execute('SET character_set_connection=utf8;')
 print datetime.datetime.now()
 #print time.time()
 now = time.time()
-server_id = random.randrange(100,1000)
+server_id = random.randrange(100,90000)
 url = "http://www" + str(server_id) + ".eyny.com/forum.php?mod=forumdisplay&fid=205&filter=author&orderby=dateline"
 res = requests.get(url)
 soup = BeautifulSoup(res.text,'lxml')
