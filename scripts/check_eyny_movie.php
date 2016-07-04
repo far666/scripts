@@ -66,12 +66,13 @@
 			return false;
 		}
 
+		$created_at = time();
 		$link = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_SELECT_DB);
 		mysqli_set_charset($link,"utf8");
 
-		$sql = "INSERT INTO sent_record (eyny_movie_id, wait_list_id,status) VALUES ({$eyny_movie_id}, {$wait_list_id},1)";
+		$sql = "INSERT INTO sent_record (eyny_movie_id, wait_list_id, status, created_at) VALUES ({$eyny_movie_id}, {$wait_list_id}, 1, {$created_at})";
 		if (!$result = $link->query($sql)) {
-			echo "query fail";
+			echo "sent record query fail";
 			exit;
 		}
 		return $result;
