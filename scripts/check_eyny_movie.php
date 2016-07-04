@@ -34,8 +34,12 @@
 				continue;
 			}
 
+			$disable_link = "http://" . WEB_HOST . "/welcome/disable_keyword/" . $row['disable_key'];
+			$body = " go download link :{$movie['url']}'\n";
+			$body .= " if you want to disable this keyword({$row['keyword']}), go disabled link:{$disable_link}";
+
 			//sent email and insert recore
-			$email_result = send_email($email, $movie['name'], $movie['url']);
+			$email_result = send_email($email, $movie['name'], $body);
 			print_r($email_result);
 			$insert_result = insert_record($eyny_movie_id, $wait_list_id);
 			print_r($insert_result);
@@ -44,18 +48,13 @@
 	echo "done\n";
 	exit;
 
-	var_dump($result);
-	echo "done";
-	exit;
-
-	function send_email($email = "", $name ="", $url="") {
-		if ($email == "" || $name == "" || $url == "") {
+	function send_email($email = "", $name = "", $body = "") {
+		if ($email == "" || $name == "" || $body == "") {
 			return false;
 		}
 
 		$emails = array($email);
 		$subject = "Movie {$name} is fuond!!";
-		$body = " go to link :{$url}'";
 
 		$result = EmailHelper::send($emails,$subject,$body);
 		return $result;
